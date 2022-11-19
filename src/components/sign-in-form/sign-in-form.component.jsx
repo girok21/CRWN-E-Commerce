@@ -1,11 +1,11 @@
 import { useState } from 'react';
-
 import GoogleSignIn from "./google-sign-in.component";
 import FormInput from "../form-input/form-input.component";
 import Button from '../button/button.component';
-import './sign-in-form.styles.scss';
 
 import { loginUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
+
+import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
     email : '',
@@ -23,8 +23,7 @@ const SignInForm = ()=> {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try{
-            const response = await loginUserWithEmailAndPassword(email, password);
-            console.log(response);
+            await loginUserWithEmailAndPassword(email, password);
         }catch(error){
             if (error.code === 'auth/user-not-found') {
                 alert('No user found');
