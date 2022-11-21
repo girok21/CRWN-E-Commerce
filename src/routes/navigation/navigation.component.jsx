@@ -5,14 +5,14 @@ import CartIcon from "../../components/cart-icon/cart-icon-component.jsx";
 import { ReactComponent as CrwnLogo } from '../../assets/083 crown.svg';
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-import { CartDropdownContext } from "../../contexts/cart-dropdown.context.jsx";
+import { CartContext } from "../../contexts/cart.context.jsx";
 
 
 import './navigation.styles.scss';
 
 function NavigationBar(){
     const { currentUser } = useContext(UserContext);
-    const { isCartDropdown } = useContext(CartDropdownContext);
+    const { isCartDropdown } = useContext(CartContext);
     const signOutHandler = async()=>{
       await signOutUser();
     }
