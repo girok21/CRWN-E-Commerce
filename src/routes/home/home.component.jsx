@@ -19,12 +19,12 @@ function Home() {
       },
       {
         "id": 4,
-        "title": "WOMEN'S",
+        "title": "WOMENS",
         "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
       },
       {
         "id": 5,
-        "title": "MEN'S",
+        "title": "MENS",
         "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
       }
     ]

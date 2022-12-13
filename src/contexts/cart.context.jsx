@@ -29,7 +29,10 @@ export const CartProvider = ({children}) => {
 
     const DecrementItemFromCart = (product)=>{
         const cartItem = cartItems.find((cartItem) => cartItem.id === product.id);
-        if(cartItem.quantity === 0) return;
+        if(cartItem.quantity === 1){    
+            RemoveItemFromCart(product);
+            return;     
+        }
         cartItem.quantity--;
         setTotalCartItems(totalCartItems-1); 
         setTotalCartPrice(totalCartPrice-product.price);
