@@ -1,5 +1,5 @@
 import { signInWithGooglePopup, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
 const GoogleSignIn = ()=> {
     const logGoogleUser = async() => {
         const { user } = await signInWithGooglePopup();
@@ -11,7 +11,7 @@ const GoogleSignIn = ()=> {
         <Button 
             children = 'Sign In with Google'
             onClick = { logGoogleUser }
-            buttonType = 'google'
+            buttonType = {BUTTON_TYPE_CLASSES.google}
         />
     )
 }
